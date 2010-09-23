@@ -1,0 +1,4 @@
+User(Hans)
+User(Fritz)
+User(Peter)
+Question("Dies ist eine Frage", Hans)
