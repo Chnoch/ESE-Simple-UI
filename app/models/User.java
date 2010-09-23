@@ -1,10 +1,12 @@
 package models;
 
-import java.util.*;
+import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
-import play.db.jpa.*;
+import play.db.jpa.Model;
 
 @Entity
 public class User extends Model {
@@ -13,8 +15,8 @@ public class User extends Model {
 	
 	public Vote votes;
 	
-	@OneToMany(mappedBy="user", cascade=CascadeType.ALL)
-	public Contribution contributions;
+	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
+	public List<Contribution> contributions;
 
 	public User(String name) {
 		this.name = name;
@@ -28,8 +30,7 @@ public class User extends Model {
 	}
 
 	private void deleteAnswers() {
-		List<Contribution> contributionList = this.contributions.find("byName", this.name).fetch();
-		for (Contribution  contribution : contributionList){
+		for (Contribution contribution : this.contributions){
 			contribution.delete();
 		}
 	}

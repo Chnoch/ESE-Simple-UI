@@ -2,8 +2,11 @@ package models;
 
 import java.util.Date;
 
-import javax.persistence.*;
-import play.db.jpa.*;
+import javax.persistence.Entity;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+
+import play.db.jpa.Model;
 
 @Entity
 public abstract class Contribution extends Model {
@@ -13,6 +16,7 @@ public abstract class Contribution extends Model {
 	protected Date timestamp;
 	@Lob
 	protected String content;
+	@ManyToOne
 	protected Vote vote;
 	
 	public Contribution(String content, User owner) {

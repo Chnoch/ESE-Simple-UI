@@ -1,7 +1,6 @@
 package models;
 
-import javax.persistence.*;
-import play.db.jpa.*;
+import javax.persistence.Entity;
 
 @Entity
 public class UpVote extends Vote {
