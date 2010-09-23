@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 public class Answer extends Contribution {
 
 	@ManyToOne
-	private Question question;
+	public Question question;
 	
 	public Answer(String content, Question question, User owner) {
 		super(content, owner);

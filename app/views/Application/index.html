@@ -1,4 +1,8 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{welcome /}
+#{if question}
+	${question.timestamp.format('dd MMM hh:mm')}<br> 
+	${question.content.nl2br()}<br>
+	${question.owner.name}
+#{/if}

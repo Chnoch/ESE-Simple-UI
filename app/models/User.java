@@ -2,17 +2,16 @@ package models;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
-import play.db.jpa.Model;
+import play.db.jpa.*;
 
 @Entity
 public class User extends Model {
 
 	public String name;
 	
+	@ManyToOne
 	public Vote votes;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)

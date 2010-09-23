@@ -12,12 +12,12 @@ import play.db.jpa.Model;
 public abstract class Contribution extends Model {
 
 	@ManyToOne
-	protected User owner;
-	protected Date timestamp;
+	public User owner;
+	public Date timestamp;
 	@Lob
-	protected String content;
+	public String content;
 	@ManyToOne
-	protected Vote vote;
+	public Vote vote;
 	
 	public Contribution(String content, User owner) {
 		this.timestamp = new Date();

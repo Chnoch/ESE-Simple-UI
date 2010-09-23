@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 public class Question extends Contribution {
 
 	@OneToMany(mappedBy="question", cascade=CascadeType.ALL)
-	private List<Answer> answers;
+	public List<Answer> answers;
 	
 	public Question(String content, User owner) {
 		super(content, owner);
