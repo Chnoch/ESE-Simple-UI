@@ -22,5 +22,6 @@ public abstract class Contribution extends Model {
 	public Contribution(String content, User owner) {
 		this.timestamp = new Date();
 		this.owner = owner;
+		this.content = content;
 	}
 }

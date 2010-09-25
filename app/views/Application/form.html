@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'New Question' /}
+
+<h1>Post your Question</h1>
+
+
+<input type="hidden" name="question.id"/>
+
+<p class="field">
+    <label for="name">Your Name:</label>
+    <input type="text" id="author" name="author"/>
+</p>
+<p class="field">
+    <label for="content">Question:</label>
+    <input type="text" id="question" name="question"/>
+</p>
+<p class="buttons">
+    <a href="/" class="button">Cancel</a> or <input type="submit" class="button" value="Post question" id="addQuestion"/>
+</p>

@@ -6,3 +6,28 @@
 	${question.content.nl2br()}<br>
 	${question.owner.name}
 #{/if}
+
+ #{list items:questions, as:'question'}
+                <div class="question">
+                    <h2 class="question">
+                        <a href="#">${question.content}</a>
+                    </h2>
+                    <div class="question-metadata">
+                        <span class="question-author">
+                            by ${question.owner.name}
+                        </span>
+                        <span class="question-date">
+                            ${question.timestamp.format('dd MMM yy hh:mm')}
+                        </span>
+                        <div class="post-answers">
+                            ${question.answers.size() ?: 'no'} 
+                            answers${question.answers.size().pluralize()}
+                            #{if question.answers}
+                                - latest by ${question.answers[0].owner.name}
+                            #{/if}
+                        </div>
+                    </div>
+                </div>
+#{/list}
+<br>
+<a href="@{Application.form()}">New Question</a>

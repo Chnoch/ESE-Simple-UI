@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:question.title /}
+ 
+#{display question:question/}
+
+<h3>Post an answer</h3>
+ 
+#{form @Application.addAnswer(post.id)}
+    <p>
+        <label for="author">Your name: </label>
+        <input type="text" name="author" id="author" />
+    </p>
+    <p>
+        <label for="content">Your answer: </label>
+        <textarea name="content" id="content"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Submit your comment" />
+    </p>
+#{/form}

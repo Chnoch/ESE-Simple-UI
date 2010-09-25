@@ -22,6 +22,12 @@ public class User extends Model {
 		this.save();
 	}
 	
+	public void postQuestion(String content) {
+	    Question question = new Question(content, this);
+	    contributions.add(question);
+	    this.save();
+	}
+	
 	public void deleteUser() {
 		deleteVotes();
 		deleteAnswers();
