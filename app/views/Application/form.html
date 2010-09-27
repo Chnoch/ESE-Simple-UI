@@ -3,17 +3,19 @@
 
 <h1>Post your Question</h1>
 
-
+#{form @Application.addQuestion()}
 <input type="hidden" name="question.id"/>
 
 <p class="field">
     <label for="name">Your Name:</label>
-    <input type="text" id="author" name="author"/>
+    <input type="text" id="owner" name="owner"/>
 </p>
 <p class="field">
     <label for="content">Question:</label>
-    <input type="text" id="question" name="question"/>
+    <input type="text" id="content" name="content"/>
 </p>
 <p class="buttons">
-    <a href="/" class="button">Cancel</a> or <input type="submit" class="button" value="Post question" id="addQuestion"/>
+    <input type="submit" class="button" value="Cancel" id="index"/>
+    <input type="submit" class="button" value="Post question" id="addQuestion"/>
 </p>
+#{/form}

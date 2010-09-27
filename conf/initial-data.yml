@@ -1,4 +1,23 @@
-User(Hans)
-User(Fritz)
-User(Peter)
-Question(Dies ist eine Frage, Hans)
+User(hans)
+
+User(fritz)
+
+User(peter)
+
+Question():
+	owner:		Hans
+	content:	This is a question from Hans.
+
+Question(questionPeter):
+	owner:		Peter
+	content:	This is a very different question.
+
+Answer(firstAnswerHans):
+	owner:		Fritz
+	question:	firstQuestionHans
+	content:	Hallo Hans
+	
+Answer(firstAnswerPeter):
+	owner:		Hans
+	question:	questionPeter
+	content:	No. This won't work like that.	

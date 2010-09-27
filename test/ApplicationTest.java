@@ -1,3 +1,5 @@
+import org.junit.*;
+
 import play.mvc.Http.Response;
 import play.test.FunctionalTest;
 

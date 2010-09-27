@@ -1,11 +1,18 @@
 #{extends 'main.html' /}
-#{set title:question.title /}
  
-#{display question:question/}
-
+<h2 class="question">
+	${question.content}
+</h2>
+by ${question.owner.name}
+${question.timestamp.format('dd MMM yy hh:mm')}<br>
+${question.answers.size() ?: 'no'} answers <br>
+#{list items:answers, as:'answer'}
+	by ${answer.owner} on ${answer.timestamp.format('dd MMM yy hh:mm')}<br>
+	${answer.content}<br>
+#{/list}
 <h3>Post an answer</h3>
  
-#{form @Application.addAnswer(post.id)}
+#{form @Application.addAnswer(question.id)}
     <p>
         <label for="author">Your name: </label>
         <input type="text" name="author" id="author" />

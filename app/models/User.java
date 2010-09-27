@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class User extends Model {
 
 	public User(String name) {
 		this.name = name;
+		this.contributions = new ArrayList<Contribution>();
 		this.save();
 	}
 	
@@ -45,6 +47,9 @@ public class User extends Model {
 		for (Vote vote : votesList) {
 			vote.delete();
 		}
-		
+	}
+	
+	public boolean equals(User user) {
+	    return this.name.equals(user.name);
 	}
 }
