@@ -1,8 +1,5 @@
 package models;
 
-import javax.persistence.Entity;
-
-@Entity
 public class DownVote extends Vote {
 
 	public DownVote(User owner, Contribution contribution) {
